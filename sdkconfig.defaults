@@ -34,9 +34,11 @@ CONFIG_ESP_HOSTED_PRIV_SDIO_PIN_CMD_SLOT_1=19
 CONFIG_ESP_HOSTED_PRIV_SDIO_PIN_D0_SLOT_1=14
 CONFIG_ESP_HOSTED_PRIV_SDIO_PIN_D1_1BIT_BUS_SLOT_1=15
 
-# Reset pin: GPIO32, active high (R77 pullup on CrowPanel)
+# Reset pin: GPIO54 on JCZN JC4880P443C_I_W (was GPIO32 on CrowPanel) - confirmed via factory
+# firmware boot log: "H_SDIO_DRV: Reset slave using GPIO[54]". Polarity kept as active-high
+# (untested assumption, same as CrowPanel reference design - CLK/CMD/D0/D1 pins matched exactly)
 CONFIG_ESP_HOSTED_SDIO_RESET_ACTIVE_HIGH=y
-CONFIG_ESP_HOSTED_SDIO_GPIO_RESET_SLAVE=32
+CONFIG_ESP_HOSTED_SDIO_GPIO_RESET_SLAVE=54
 
 # Delay after C6 reset to allow boot (v2.3.0 may be slow)
 CONFIG_ESP_HOSTED_SDIO_RESET_DELAY_MS=1500

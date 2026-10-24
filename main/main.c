@@ -175,7 +175,7 @@ void app_main(void)
         ESP_LOGE(TAG, "[FAIL] esp_hosted_init failed: %s (0x%x) after %" PRId64 "ms",
                  esp_err_to_name(ret), ret, hosted_init_time);
         ESP_LOGE(TAG, "[FAIL] SDIO transport cannot initialize — all OTA paths blocked");
-        ESP_LOGE(TAG, "[DIAG] Check: C6 powered? Reset pin GPIO32 toggling? SDIO pins correct?");
+        ESP_LOGE(TAG, "[DIAG] Check: C6 powered? Reset pin GPIO54 toggling? SDIO pins correct?");
         return;
     }
     ESP_LOGI(TAG, "[PASS] esp_hosted_init OK in %" PRId64 "ms", hosted_init_time);
